@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="あなたの野望に、軍師を。諜報官・軍師・将軍とともに調査、戦略、出陣準備を進める無料AI王国経営。">
-<title>AI王国経営｜あなたの野望に、軍師を。</title>
+<meta name="description" content="顔出し不要のひとりビジネスを支える、3人のAI社員。調査・戦略・実行準備を秘密作戦室で進める無料ツール。">
+<title>AI社員・秘密作戦室｜表に出ずに、ビジネスを仕掛けよう。</title>
 <style>
 :root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#17233a;background:#f5f7fc}*{box-sizing:border-box}body{margin:0}button,textarea{font:inherit}button{cursor:pointer}main{max-width:760px;margin:auto;padding:26px 18px 75px}
 nav{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:800;color:#3e5790}.free{border-radius:30px;background:#e5edff;padding:6px 12px;color:#3159ad}
@@ -31,34 +31,50 @@ label{color:#f2ddb3}textarea{background:#0b192d;color:#f5ebd7;border:1px solid #
 .person:before{content:"◆";display:block;color:#d4ab68;font-size:22px;margin-bottom:9px}
 .result{border-color:#b1905d}.result h2{color:#f4d39b}
 @media(max-width:500px){.hero{padding-top:48px}.person{padding:16px 6px}.person strong{font-size:13px}.person small{font-size:10px}}
-</style></head><body><main><nav><span>♜ AI KINGDOM <span class="navsub">/ 王国作戦本部</span></span><span class="free">FREE TO PLAY</span></nav>
-<header class="hero"><div class="eyebrow">YOUR KINGDOM. YOUR AMBITION.</div><h1>あなたの野望に、<br><em>軍師を。</em></h1><p class="lead">王国の君主は、あなた。野望を掲げれば、諜報官が情報を集め、軍師が勝ち筋を描き、将軍が出陣の準備を整える。さあ、最初の作戦を始めよう。</p></header>
-<div class="chapter">第一章 · 野望の宣言</div><section class="panel"><label for="request">君主よ、どんな野望を掲げますか？</label><textarea id="request" placeholder="例：AIを使って最初の1万円を稼ぎたい"></textarea>
+</style><style>
+/* Friendly, flat illustrated office-ninja look: no realistic characters */
+:root{color:#24354a;background:#eef6f2}
+body{background:radial-gradient(circle at 50% 0%,#e5f4e9 0%,#f5f8f2 58%,#eef4f1 100%);color:#24354a}
+nav{color:#24564a}.navsub{color:#668477}.free{background:#d6f0dd;color:#285c43;border:1px solid #9acdb0}
+.eyebrow{color:#2e8060}.hero{padding-top:60px}h1{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:900;color:#24354a;text-shadow:none;letter-spacing:-.055em;font-size:clamp(32px,6.5vw,57px)}h1 em{color:#278564}.lead{color:#586f69}
+.panel{background:#fff;border:2px solid #cbded5;border-radius:22px;color:#24354a;box-shadow:0 12px 32px #254d3810}label{color:#274c40}
+textarea{background:#f8fcfa;color:#24354a;border:1px solid #b8d4c5}textarea::placeholder{color:#849d93}textarea:focus{border-color:#40a27b;outline:3px solid #c9f0db}
+.chip{background:#eef8f0;color:#34634c;border:1px solid #c0dfcd}.chip:hover{background:#dff2e4}
+.primary{background:#278564;color:white;box-shadow:none}.secondary{background:#e5f3eb;color:#28674e;border:1px solid #b5d9c3}
+.person{background:#fff;border:2px solid #cbded5;color:#24354a;border-radius:20px}.person strong{color:#274c40}.person small{color:#658073}.person:before{display:none}
+.mini,.footer{color:#70877c}.footer a{color:#267e60}.chapter{color:#328568}.chapter:before,.chapter:after{background:#95c7a7}
+.result{border-color:#b4d9c3}.result h2{color:#254f3e}.result p{color:#647b70}.result textarea{background:#f8fcfa}
+.step{background:#e3f5e9;color:#2c7555;border:1px solid #b4d8bf}.mission-note{background:#f1f8f1;color:#456b57;border:1px solid #c7e1ce}.handoff{border-color:#d8e8dd}.message{color:#277b57}
+.staff-figure{width:80px;height:80px;margin:0 auto 12px;display:block}.staff-figure svg{width:100%;height:100%}
+@media(max-width:500px){.staff-figure{width:64px;height:64px}}
+</style></head><body><main><nav><span>AI STAFF <span class="navsub">/ 秘密作戦室</span></span><span class="free">FREE TO PLAY</span></nav>
+<header class="hero"><div class="eyebrow">YOUR SECRET BUSINESS TEAM</div><h1>表に出ずに、<br><em>ビジネスを仕掛けよう。</em></h1><p class="lead">あなたは小さな会社の社長。3人のAI社員が、忍者のように情報を探り、作戦を練り、販売準備を進めます。顔出しなしでも始められる、ひとりビジネスの作戦室。</p></header>
+<div class="chapter">秘密作戦室 · 最初の依頼</div><section class="panel"><label for="request">社長、どんな仕事を任せますか？</label><textarea id="request" placeholder="例：AIを使って最初の1万円を稼ぎたい"></textarea>
 <div class="examples"><button class="chip" data-example="AIを使った初めての収益を得る">初めての収益を得る</button><button class="chip" data-example="お店の集客を改善したい">店の客を増やす</button><button class="chip" data-example="海外のAIビジネスを日本で試したい">海外の戦略を試す</button></div>
-<button id="start" class="primary">野望を掲げ、作戦を開始する ⚔</button><p class="mini">登録不要・APIキー不要。AIの実行にはChatGPTなどを使います。</p><div id="message" class="message" role="status" aria-live="polite"></div></section>
-<div class="chapter" style="margin-top:36px">王国を支える三人の幹部</div><div class="team"><div class="person"><strong>01 諜報官</strong><small>敵情を探り、勝機を見つける</small></div><div class="person"><strong>02 軍師</strong><small>勝ち筋を描き、作戦を定める</small></div><div class="person"><strong>03 将軍</strong><small>出陣の武器を整える</small></div></div>
+<button id="start" class="primary">AI社員3人に仕事を依頼する →</button><p class="mini">登録不要・APIキー不要。AIの実行にはChatGPTなどを使います。</p><div id="message" class="message" role="status" aria-live="polite"></div></section>
+<div class="chapter" style="margin-top:36px">水面下で動く、3人のAI社員</div><div class="team"><div class="person"><div class="staff-figure" role="img" aria-label="虫眼鏡を持った、かわいい調査社員"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="46" fill="#dcf3e7"/><path d="M25 75q25-32 50 0v10H25z" fill="#467c91"/><circle cx="50" cy="40" r="23" fill="#f8d6b5"/><path d="M27 35q5-29 27-23 18 0 21 24l-13-9-26 7z" fill="#283c4b"/><circle cx="42" cy="42" r="2.5" fill="#283c4b"/><circle cx="57" cy="42" r="2.5" fill="#283c4b"/><path d="M45 52q5 5 10 0" fill="none" stroke="#ae7462" stroke-width="2"/><circle cx="74" cy="61" r="13" fill="none" stroke="#456b60" stroke-width="5"/><path d="M84 71l10 11" stroke="#456b60" stroke-width="6" stroke-linecap="round"/></svg></div><strong>01 調査社員</strong><small>忍び足で商機を探る</small></div><div class="person"><div class="staff-figure" role="img" aria-label="巻物を持った、かわいい戦略社員"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="46" fill="#e4edf8"/><path d="M25 77q25-31 50 0v9H25z" fill="#5269a1"/><circle cx="50" cy="40" r="23" fill="#f7d6b9"/><path d="M28 34q0-25 23-24 25 0 24 25l-10-7-30 8z" fill="#39434d"/><path d="M39 43h9m5 0h9" stroke="#364451" stroke-width="3" stroke-linecap="round"/><path d="M46 53q4 3 8 0" stroke="#ad7668" fill="none" stroke-width="2"/><rect x="61" y="64" width="30" height="19" rx="4" fill="#f5e7b9" stroke="#a78d60" stroke-width="2"/><path d="M67 70h17m-17 6h11" stroke="#aa9872" stroke-width="2"/></svg></div><strong>02 戦略社員</strong><small>情報から売り方を考える</small></div><div class="person"><div class="staff-figure" role="img" aria-label="書類を持った、かわいい実行社員"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="46" fill="#fceadf"/><path d="M25 76q25-33 50 0v10H25z" fill="#b26b56"/><circle cx="50" cy="40" r="23" fill="#f9d5b4"/><path d="M28 35q2-25 22-25 23 0 25 25l-14-7-24 8z" fill="#423a3e"/><circle cx="42" cy="43" r="2.5" fill="#423a3e"/><circle cx="58" cy="43" r="2.5" fill="#423a3e"/><path d="M43 52q7 7 14 0" fill="none" stroke="#aa7163" stroke-width="2"/><rect x="61" y="61" width="27" height="27" rx="3" fill="#fff" stroke="#b9a5a0" stroke-width="2"/><path d="M67 68h14m-14 6h14m-14 6h10" stroke="#cc9684" stroke-width="2"/></svg></div><strong>03 実行社員</strong><small>販売の準備を整える</small></div></div>
 <section class="panel result hidden" id="result"><span class="step" id="stepBadge">STEP 1 / 3</span><h2 id="stepTitle">調査社員が担当します</h2><p id="stepHelp"></p>
-<textarea id="prompt" readonly aria-label="AI社員への指示文"></textarea><div class="actions"><button id="copy" class="primary">作戦指令をコピー</button><button id="chat" class="secondary">AIに指令を届ける ↗</button></div>
-<div class="mission-note">任務の進め方：作戦指令をコピー → ChatGPTで実行 → AIの報告を貼り付け → 次の任務へ進軍。自動実行や自動投稿は行いません。</div><div class="handoff"><label for="answer" id="answerLabel">AIからの報告をここに貼り付ける</label><textarea id="answer" placeholder="諜報官・軍師・将軍からの報告を貼り付ける"></textarea><div class="actions"><button id="next" class="primary">次の任務へ進軍する →</button><button id="download" class="secondary">作業を保存</button></div></div></section>
+<textarea id="prompt" readonly aria-label="AI社員への指示文"></textarea><div class="actions"><button id="copy" class="primary">仕事の指示をコピー</button><button id="chat" class="secondary">ChatGPTで実行する ↗</button></div>
+<div class="mission-note">任務の進め方：仕事の指示をコピー → ChatGPTで実行 → AIの報告を貼り付け → 次の任務へ進軍。自動実行や自動投稿は行いません。</div><div class="handoff"><label for="answer" id="answerLabel">ChatGPTの回答をここに貼り付ける</label><textarea id="answer" placeholder="AI社員からの回答を貼り付ける"></textarea><div class="actions"><button id="next" class="primary">次の社員に引き継ぐ →</button><button id="download" class="secondary">作業を保存</button></div></div></section>
 <div class="footer">このサイトはAIへの指示文を作る無料ツールです。AIを自動実行・自動投稿するものではありません。入力と作業記録はこの端末のブラウザに保存されます。共有端末では利用にご注意ください。利用先AIサービスの料金・制限は別途適用されます。<p><a href="https://rireme-ai-radar.vercel.app/" target="_blank" rel="noopener noreferrer">海外AIビジネスの事例を探す →</a></p></div>
 </main><script>
 (()=>{'use strict';const $=id=>document.getElementById(id),key='ai-staff-simple-v1';let state={request:'',step:0,answers:['','','']};try{const x=JSON.parse(localStorage.getItem(key)||'null');if(x&&typeof x.request==='string'&&Array.isArray(x.answers)){state.request=x.request.slice(0,5000);state.step=Math.min(2,Math.max(0,Number(x.step)||0));state.answers=x.answers.slice(0,3).map(y=>String(y||'').slice(0,100000))}}catch(e){}
 const save=()=>{try{localStorage.setItem(key,JSON.stringify(state))}catch(e){msg('保存容量を超えたため、保存できませんでした')}},msg=t=>$('message').textContent=t;
 $('request').value=state.request;
-const titles=['諜報官が偵察に向かいます','軍師が軍議を開きます','将軍が出陣の準備を整えます'];
-const helps=['情報収集の任務です。市場・競合・成功事例を調べ、根拠付きの諜報報告を受け取ります。','軍議の任務です。諜報報告から勝ち筋を選び、今日の一手と7日間の作戦を立てます。','出陣準備の任務です。軍師の作戦を営業文・発信文・行動手順に変えます。'];
-function prompt(){const base='【あなたの依頼】'+state.request+'\n\n';if(state.step===0)return 'あなたは王国の精鋭諜報官です。ユーザーの依頼を実現するため、最初に必要な調査を行ってください。\n'+base+'出力：①依頼の目的を1文で整理 ②具体的な事例と参考情報を最大5件（出典URL・発表日を可能な限り付記）③想定顧客・課題・競合や代替手段 ④実現可能性と障害 ⑤軍師への引き継ぎ要約。\n最新情報が必要ならWeb検索を使用し、使えない場合は明記。事実・自己申告・仮説を区別。架空のURL・数字・成功談を作らない。依頼が曖昧でも合理的な仮定を明示して進める。';
-if(state.step===1)return 'あなたは王国の優秀な軍師です。調査結果から、最も実行価値の高い行動を1つに絞ってください。\n'+base+'【諜報官の報告書】\n'+state.answers[0]+'\n\n出力：①何を実現するか ②根拠がある発見と未確認事項 ③選ぶべき方針と理由 ④今日すぐできる最初の行動 ⑤7日間の行動計画（毎日の作業・目安時間・必要費用）⑥成果を測る方法と撤退・改善基準 ⑦将軍への引き継ぎ要約。\n予算や時間が不明なら小さく試せる計画を優先。事実と仮説を混同せず、根拠のない成功保証は禁止。';
-return 'あなたは王国の出陣準備を担う将軍です。戦略社員の結論を、読み手に価値が伝わる文章に変えてください。\n'+base+'【軍師の作戦書】\n'+state.answers[1]+'\n\n出力：①読者に伝える価値を一言で ②X投稿案を3本（異なる切り口）③note無料記事の構成案と冒頭文 ④読者が今日試せる具体的な一歩 ⑤公開前の事実確認チェック。\n架空の実績や体験談を創作しない。過度な煽りを避け、確認できた出典を残す。'};
-function render(){if(!state.request.trim())return;$('result').classList.remove('hidden');$('stepBadge').textContent='第 '+(state.step+1)+' 幕 / 全3幕';$('stepTitle').textContent=titles[state.step];$('stepHelp').textContent=helps[state.step];$('prompt').value=prompt();$('answer').value=state.answers[state.step];$('answerLabel').textContent=state.step===2?'発信社員の回答を保存する（任意）':'AIからの報告をここに貼り付ける';$('next').textContent=state.step===2?'新たな作戦を始める ↺':'次の任務へ進軍する →'}
-function start(){state.request=$('request').value.trim();if(!state.request){msg('やりたいことを一言入力してください');$('request').focus();return}state.step=0;state.answers=['','',''];save();render();msg('作戦指令をコピーしてChatGPTで実行してください');$('result').scrollIntoView({behavior:'smooth',block:'start'})}
+const titles=['調査社員が商機を探ります','戦略社員が作戦を練ります','実行社員が販売準備を整えます'];
+const helps=['市場・競合・成功事例を調べ、根拠付きの調査レポートを作ります。','調査結果から優先する案を選び、今日の一手と7日間の計画を作ります。','戦略をもとに、販売文・SNS投稿・行動手順を準備します。'];
+function prompt(){const base='【あなたの依頼】'+state.request+'\n\n';if(state.step===0)return 'あなたは、忍者のように静かに商機を探す優秀な調査担当AI社員です。ユーザーの依頼を実現するため、最初に必要な調査を行ってください。\n'+base+'出力：①依頼の目的を1文で整理 ②具体的な事例と参考情報を最大5件（出典URL・発表日を可能な限り付記）③想定顧客・課題・競合や代替手段 ④実現可能性と障害 ⑤戦略社員への引き継ぎ要約。\n最新情報が必要ならWeb検索を使用し、使えない場合は明記。事実・自己申告・仮説を区別。架空のURL・数字・成功談を作らない。依頼が曖昧でも合理的な仮定を明示して進める。';
+if(state.step===1)return 'あなたは、情報から実行可能な計画を作る優秀な戦略担当AI社員です。調査結果から、最も実行価値の高い行動を1つに絞ってください。\n'+base+'【調査社員の報告書】\n'+state.answers[0]+'\n\n出力：①何を実現するか ②根拠がある発見と未確認事項 ③選ぶべき方針と理由 ④今日すぐできる最初の行動 ⑤7日間の行動計画（毎日の作業・目安時間・必要費用）⑥成果を測る方法と撤退・改善基準 ⑦実行社員への引き継ぎ要約。\n予算や時間が不明なら小さく試せる計画を優先。事実と仮説を混同せず、根拠のない成功保証は禁止。';
+return 'あなたは、戦略を販売に必要な素材へ変える優秀な実行担当AI社員です。戦略社員の結論を、読み手に価値が伝わる文章に変えてください。\n'+base+'【戦略社員の計画書】\n'+state.answers[1]+'\n\n出力：①読者に伝える価値を一言で ②X投稿案を3本（異なる切り口）③note無料記事の構成案と冒頭文 ④読者が今日試せる具体的な一歩 ⑤公開前の事実確認チェック。\n架空の実績や体験談を創作しない。過度な煽りを避け、確認できた出典を残す。'};
+function render(){if(!state.request.trim())return;$('result').classList.remove('hidden');$('stepBadge').textContent='STEP '+(state.step+1)+' / 3';$('stepTitle').textContent=titles[state.step];$('stepHelp').textContent=helps[state.step];$('prompt').value=prompt();$('answer').value=state.answers[state.step];$('answerLabel').textContent=state.step===2?'発信社員の回答を保存する（任意）':'ChatGPTの回答をここに貼り付ける';$('next').textContent=state.step===2?'最初の社員に戻る ↺':'次の社員に引き継ぐ →'}
+function start(){state.request=$('request').value.trim();if(!state.request){msg('やりたいことを一言入力してください');$('request').focus();return}state.step=0;state.answers=['','',''];save();render();msg('仕事の指示をコピーしてChatGPTで実行してください');$('result').scrollIntoView({behavior:'smooth',block:'start'})}
 document.querySelectorAll('[data-example]').forEach(b=>b.onclick=()=>{$('request').value=b.dataset.example;$('request').focus()});
 $('start').onclick=start;
 $('answer').oninput=()=>{state.answers[state.step]=$('answer').value;save()};
-$('next').onclick=()=>{state.answers[state.step]=$('answer').value;if(state.step!==2&&!state.answers[state.step].trim()){msg('先にAIからの報告を貼り付けてください');$('answer').focus();return}state.step=(state.step+1)%3;save();render();msg('次の任務が解放されました')};
+$('next').onclick=()=>{state.answers[state.step]=$('answer').value;if(state.step!==2&&!state.answers[state.step].trim()){msg('先にChatGPTの回答を貼り付けてください');$('answer').focus();return}state.step=(state.step+1)%3;save();render();msg('次の社員に引き継ぎました')};
 $('copy').onclick=async()=>{try{await navigator.clipboard.writeText($('prompt').value);msg('コピーしました。ChatGPTに貼り付けてください')}catch(e){$('prompt').select();msg('文章を選択しました。手動でコピーしてください')}};
 $('chat').onclick=()=>window.open('https://chatgpt.com/','_blank','noopener,noreferrer');
-$('download').onclick=()=>{state.answers[state.step]=$('answer').value;save();const content=['AI王国経営 作戦記録','依頼：'+state.request,...state.answers.map((a,i)=>'【'+['調査','戦略','発信'][i]+'社員】\n'+a)].join('\n\n');const url=URL.createObjectURL(new Blob([content],{type:'text/plain;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download='ai-kingdom-mission.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
+$('download').onclick=()=>{state.answers[state.step]=$('answer').value;save();const content=['AI社員・秘密作戦室 作業記録','依頼：'+state.request,...state.answers.map((a,i)=>'【'+['調査','戦略','発信'][i]+'社員】\n'+a)].join('\n\n');const url=URL.createObjectURL(new Blob([content],{type:'text/plain;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download='ai-kingdom-mission.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
 if(state.request)render();
 })();
 </script></body></html>
